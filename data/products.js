@@ -1,0 +1,170 @@
+// All products from Gujarati Farsanwala Gruh Udgyog Instagram page
+
+export const categories = [
+  { id: 'namkeen',  label: 'Namkeen',  emoji: '🌶️' },
+  { id: 'khakhra',  label: 'Khakhra',  emoji: '🍘' },
+  { id: 'pickles',  label: 'Pickles',  emoji: '🫙' },
+  { id: 'farali',   label: 'Farali',   emoji: '🥗' },
+]
+
+export const products = [
+  // ── NAMKEEN ──────────────────────────────────────────────────────────
+  {
+    id: 1, category: 'namkeen',
+    name: 'Ring',
+    desc: 'Light, puffed crispy rings made from chickpea flour — perfectly spiced for a satisfying crunch.',
+    badge: 'Popular',
+    color: 'from-orange-50 to-orange-100',
+    emoji: '⭕',
+  },
+  {
+    id: 2, category: 'namkeen',
+    name: 'Tikhi Mamri',
+    desc: 'Spicy puffed rice balls coated in a zesty masala — bold heat and irresistible crunch.',
+    badge: 'Spicy',
+    color: 'from-red-50 to-red-100',
+    emoji: '🔥',
+  },
+  {
+    id: 3, category: 'namkeen',
+    name: 'Mamri',
+    desc: 'Classic mildly-spiced puffed rice balls — a light snack loved by all ages.',
+    badge: '',
+    color: 'from-yellow-50 to-yellow-100',
+    emoji: '🌾',
+  },
+  {
+    id: 4, category: 'namkeen',
+    name: 'Chat Puri',
+    desc: 'Crispy mini puris seasoned with chaat masala — tangy, crunchy and totally munchable.',
+    badge: 'Favourite',
+    color: 'from-amber-50 to-amber-100',
+    emoji: '🥙',
+  },
+  {
+    id: 5, category: 'namkeen',
+    name: 'Methi Puri',
+    desc: 'Crispy deep-fried puris flavoured with fresh fenugreek leaves — earthy, aromatic and wholesome.',
+    badge: '',
+    color: 'from-green-50 to-green-100',
+    emoji: '🌿',
+  },
+  {
+    id: 6, category: 'namkeen',
+    name: 'Mini Bhakharwadi',
+    desc: 'Bite-sized rolled savoury snack with spiced coconut filling — sweet, spicy and utterly addictive.',
+    badge: 'Best Seller',
+    color: 'from-pink-50 to-pink-100',
+    emoji: '🍥',
+  },
+  {
+    id: 7, category: 'namkeen',
+    name: 'Masala Chakri',
+    desc: 'Spiral-shaped crispy snack made from rice flour and spices — a festive season must-have.',
+    badge: '',
+    color: 'from-purple-50 to-purple-100',
+    emoji: '🌀',
+  },
+  {
+    id: 8, category: 'namkeen',
+    name: 'Bhelpuri',
+    desc: 'Classic Mumbai-style bhelPuri mix — tangy, crunchy puffed rice with sev and spices, ready to toss.',
+    badge: 'Popular',
+    color: 'from-lime-50 to-lime-100',
+    emoji: '🥗',
+  },
+  {
+    id: 9, category: 'namkeen',
+    name: 'Soya Stick',
+    desc: 'Crunchy soya-based sticks lightly seasoned with masala — a protein-rich guilt-free snack.',
+    badge: 'Healthy',
+    color: 'from-teal-50 to-teal-100',
+    emoji: '🥢',
+  },
+
+  // ── KHAKHRA ──────────────────────────────────────────────────────────
+  {
+    id: 10, category: 'khakhra',
+    name: 'Methi Khakhra',
+    desc: 'Wholesome fenugreek-infused whole wheat khakhra — nutritious, fragrant and great for health-conscious snackers.',
+    badge: 'Healthy',
+    color: 'from-green-50 to-emerald-100',
+    emoji: '🌿',
+  },
+  {
+    id: 11, category: 'khakhra',
+    name: 'Jeera Khakhra',
+    desc: 'Aromatic cumin-flavoured crispy khakhra — simple, earthy and wonderfully fragrant with every bite.',
+    badge: 'Classic',
+    color: 'from-yellow-50 to-yellow-100',
+    emoji: '🌾',
+  },
+  {
+    id: 12, category: 'khakhra',
+    name: 'Masala Khakhra',
+    desc: 'Spiced with cumin, red chilli and coriander for an irresistible crunch that pairs perfectly with chai.',
+    badge: 'Best Seller',
+    color: 'from-orange-50 to-orange-100',
+    emoji: '🍘',
+  },
+
+  // ── PICKLES ───────────────────────────────────────────────────────────
+  {
+    id: 13, category: 'pickles',
+    name: 'Kerda Pickle',
+    desc: 'Tangy caperberry (kerda) pickle with spiced mustard oil — a rare Gujarati delicacy with a punchy flavour.',
+    badge: 'Specialty',
+    color: 'from-lime-50 to-lime-100',
+    emoji: '🫒',
+  },
+  {
+    id: 14, category: 'pickles',
+    name: 'Gunda Pickle',
+    desc: 'Sticky wild berry (gunda) pickle slow-marinated in oil and spices — intensely flavourful and traditional.',
+    badge: 'Traditional',
+    color: 'from-purple-50 to-purple-100',
+    emoji: '🍇',
+  },
+  {
+    id: 15, category: 'pickles',
+    name: 'Chana Methi Pickle',
+    desc: 'Whole chickpeas and fenugreek seeds pickled in spiced oil — a hearty, textured Gujarati achaar.',
+    badge: '',
+    color: 'from-amber-50 to-yellow-100',
+    emoji: '🫘',
+  },
+  {
+    id: 16, category: 'pickles',
+    name: 'Chhundo Pickle',
+    desc: 'Sweet & spicy raw mango preserve — a classic Gujarati condiment that goes with everything.',
+    badge: 'Favourite',
+    color: 'from-yellow-50 to-orange-100',
+    emoji: '🥭',
+  },
+  {
+    id: 17, category: 'pickles',
+    name: 'Green Chilli Pickle',
+    desc: 'Whole green chillies marinated with mustard, fenugreek and spiced oil — fiery and deeply satisfying.',
+    badge: '🔥 Spicy',
+    color: 'from-green-50 to-green-100',
+    emoji: '🫑',
+  },
+  {
+    id: 18, category: 'pickles',
+    name: 'Amba Halder Pickle',
+    desc: 'Raw mango and turmeric pickle — a bright, tangy and medicinal achaar with roots in Ayurvedic tradition.',
+    badge: 'Healthy',
+    color: 'from-yellow-50 to-yellow-100',
+    emoji: '🌿',
+  },
+
+  // ── FARALI ────────────────────────────────────────────────────────────
+  {
+    id: 19, category: 'farali',
+    name: 'Sabudana Farali Chevdo',
+    desc: 'Light crispy tapioca-based farali chevdo made especially for vrat — a fasting snack that\'s anything but boring.',
+    badge: 'Vrat Special',
+    color: 'from-sky-50 to-blue-100',
+    emoji: '🫧',
+  },
+]
