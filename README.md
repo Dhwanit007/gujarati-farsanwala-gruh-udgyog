@@ -1,6 +1,6 @@
-# Gujarati Farsanwala Gruh Udgyog — Next.js Website
+# Gujarati Farsanwala Gruh Udhyog — Next.js Website
 
-A modern, responsive Next.js website for **Gujarati Farsanwala Gruh Udgyog** — authentic Gujarati namkeen, khakhra, pickles and farali snacks since 2011.
+A modern, responsive Next.js website for **Gujarati Farsanwala Gruh Udhyog** — authentic Gujarati namkeen, khakhra, pickles and farali snacks since 2011.
 
 ## Features
 - ✅ Built with **Next.js 14** + Tailwind CSS
@@ -26,17 +26,18 @@ npm run dev
 
 ## Adding Product Images
 
-When you have images ready:
+Images render **automatically** — no code changes needed:
 
-1. Place images in `/public/products/` folder (e.g., `/public/products/ring.jpg`)
-2. In `data/products.js`, add an `image` field to each product:
-   ```js
-   { id: 1, ..., image: '/products/ring.jpg' }
-   ```
-3. In `components/Products.jsx`, replace the `<span>` emoji with:
-   ```jsx
-   <Image src={product.image} alt={product.name} fill className="object-cover" />
-   ```
+1. Drop an image into `/public/products/`
+2. Name it after the product, lowercase with dashes instead of spaces, e.g.:
+   | Product | Filename |
+   |---|---|
+   | Ring | `ring.jpg` |
+   | Tikhi Mamri | `tikhi-mamri.jpg` |
+   | Mini Bhakharwadi | `mini-bhakharwadi.png` |
+   | Sabudana Farali Chevdo | `sabudana-farali-chevdo.jpg` |
+
+Supported formats: `.jpg`, `.jpeg`, `.png`, `.webp`. The dev server picks up new images on restart (`npm run dev`); a production build needs `npm run build` again. Products without an image keep the emoji placeholder.
 
 ## Project Structure
 

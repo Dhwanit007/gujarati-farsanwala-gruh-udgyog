@@ -1,9 +1,22 @@
 'use client'
 import { X, ShoppingBag, Store } from 'lucide-react'
+import { FiCheckCircle, FiLogIn, FiMapPin, FiShoppingCart } from 'react-icons/fi'
+import { useEffect } from 'react'
 import { usePopup } from '../context/PopupContext'
 
 export default function ReliancePopup() {
   const { show, closing, closePopup: handleClose } = usePopup()
+
+  useEffect(() => {
+    if (!show) return undefined
+
+    const handleEscape = event => {
+      if (event.key === 'Escape') handleClose()
+    }
+
+    document.addEventListener('keydown', handleEscape)
+    return () => document.removeEventListener('keydown', handleEscape)
+  }, [show, handleClose])
 
   if (!show) return null
 
@@ -25,7 +38,7 @@ export default function ReliancePopup() {
         style={{ pointerEvents: 'none' }}
       >
         <div
-          className="relative w-full max-w-md rounded-2xl overflow-hidden shadow-2xl"
+          className="w-full max-w-md"
           style={{
             pointerEvents: 'all',
             transform: closing ? 'scale(0.9) translateY(20px)' : 'scale(1) translateY(0)',
@@ -33,6 +46,7 @@ export default function ReliancePopup() {
             transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
           }}
         >
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl">
           {/* Header gradient */}
           <div
             className="relative px-6 pt-8 pb-6 text-center overflow-hidden"
@@ -64,7 +78,7 @@ export default function ReliancePopup() {
               className="inline-block px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-3"
               style={{ background: 'rgba(232,132,26,0.3)', color: '#F5DFA0', border: '1px solid rgba(232,132,26,0.4)' }}
             >
-              📍 Gujarat Residents
+              <FiMapPin className="inline mr-1" aria-hidden="true" /> Gujarat Residents
             </div>
 
             <h2
@@ -77,23 +91,23 @@ export default function ReliancePopup() {
               className="text-3xl font-black"
               style={{ fontFamily: "'Playfair Display', serif", color: '#E8841A' }}
             >
-              Reliance Stores!
+              SMART BAZAAR Stores!
             </h2>
           </div>
 
           {/* Body */}
-          <div className="bg-white px-6 py-6">
+          <div className="popup-body bg-white px-6 py-6">
 
             {/* Step pills */}
             <div className="flex flex-col gap-3 mb-6">
               {[
-                { icon: '📍', step: '1', text: 'Find your nearest Reliance Smart or Reliance Fresh store in Gujarat' },
-                { icon: '🚶', step: '2', text: 'Walk in to the store — no app, no account, no waiting' },
-                { icon: '🛒', step: '3', text: 'Pick up Gujarati Farsanwala products from the namkeen aisle' },
-              ].map(({ icon, step, text }) => (
+                { Icon: FiMapPin, step: '1', text: 'Find your nearest SMART BAZAAR store in Gujarat' },
+                { Icon: FiLogIn, step: '2', text: 'Walk in to the store — no app, no account, no waiting' },
+                { Icon: FiShoppingCart, step: '3', text: 'Pick up Gujarati Farsanwala products from the namkeen aisle' },
+              ].map(({ Icon, step, text }) => (
                 <div
                   key={step}
-                  className="flex items-start gap-3 rounded-xl p-3"
+                  className="popup-step flex items-start gap-3 rounded-xl p-3"
                   style={{ background: '#FFFBF2', border: '1px solid rgba(232,132,26,0.15)' }}
                 >
                   <div
@@ -102,8 +116,8 @@ export default function ReliancePopup() {
                   >
                     {step}
                   </div>
-                  <p className="text-sm leading-snug pt-1" style={{ color: '#5C3D1A' }}>
-                    <span className="mr-1">{icon}</span>{text}
+                  <p className="popup-step-text text-sm leading-snug pt-1" style={{ color: '#5C3D1A' }}>
+                    <Icon className="inline mr-1" aria-hidden="true" />{text}
                   </p>
                 </div>
               ))}
@@ -130,8 +144,12 @@ export default function ReliancePopup() {
               onMouseEnter={e => e.currentTarget.style.opacity = '0.9'}
               onMouseLeave={e => e.currentTarget.style.opacity = '1'}
             >
-              Got it, I'll visit! 🙏
+              <FiCheckCircle className="inline mr-1" aria-hidden="true" /> Got it, I'll visit!
             </button>
+          </div>
+          </div>
+          <div className="popup-ecommerce-notice mt-2 rounded-xl px-4 py-3 text-center text-xs font-bold tracking-wide shadow-lg">
+            Coming Soon to Quick E-Commerce
           </div>
         </div>
       </div>

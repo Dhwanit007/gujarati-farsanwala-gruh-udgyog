@@ -21,6 +21,20 @@ html {
   scroll-behavior: smooth;
 }
 
+html,
+body,
+#__next {
+  width: 100%;
+  min-width: 0;
+}
+
+section,
+nav,
+footer {
+  width: 100%;
+  min-width: 0;
+}
+
 body {
   font-family: 'Lato', sans-serif;
   background-color: var(--warm-white);
@@ -84,3 +98,156 @@ body {
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--warm-white); }
 ::-webkit-scrollbar-thumb { background: var(--saffron); border-radius: 3px; }
+
+/* ── Footer oversized wordmark band ─────────────────────────────────── */
+.footer-wordmark-band {
+  height: clamp(56px, 11vw, 130px);
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+.footer-wordmark {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 8.2vw, 8.5rem);
+  line-height: 0.78;          /* crops the letters top & bottom like the reference */
+  transform: translateY(4%);
+  color: rgba(201, 162, 39, 0.5);
+  transition: color 0.4s ease, text-shadow 0.4s ease;
+  cursor: default;
+  padding: 0 8px;
+}
+/* White/light glow in dark mode */
+[data-theme='dark'] .footer-wordmark:hover {
+  color: #F5DFA0;
+  text-shadow:
+    0 0 18px rgba(255, 244, 214, 0.9),
+    0 0 48px rgba(255, 244, 214, 0.55),
+    0 0 90px rgba(232, 132, 26, 0.4);
+}
+/* Dark glow in light mode */
+[data-theme='light'] .footer-wordmark:hover {
+  color: #F5DFA0;
+  text-shadow:
+    0 0 18px rgba(0, 0, 0, 0.85),
+    0 0 48px rgba(0, 0, 0, 0.55),
+    0 0 90px rgba(232, 132, 26, 0.45);
+}
+
+/* ── Dark mode overrides ────────────────────────────────────────────── */
+[data-theme='dark'] body {
+  background-color: #140A03;
+  color: #F5E6C8;
+}
+
+/* Section / card backgrounds (inline styles carry the light palette, so
+   these attribute selectors retarget them without touching components) */
+[data-theme='dark'] [style*='background: #FFFBF2'],
+[data-theme='dark'] [style*='background:#FFFBF2'] {
+  background: #140A03 !important;
+}
+[data-theme='dark'] [style*='background: #FDF6E3'],
+[data-theme='dark'] [style*='background:#FDF6E3'] {
+  background: #1A0E05 !important;
+}
+[data-theme='dark'] .bg-white {
+  background-color: #241309 !important;
+}
+[data-theme='dark'] .popup-body {
+  background-color: #241309 !important;
+}
+[data-theme='dark'] .popup-step {
+  background: #2A1709 !important;
+  border-color: rgba(232,132,26,0.2) !important;
+}
+[data-theme='dark'] .popup-step-text {
+  color: #F5E6C8 !important;
+}
+.popup-ecommerce-notice {
+  background: linear-gradient(135deg, #3B1A08, #7A3D10);
+  border: 1px solid rgba(232,132,26,0.45);
+  color: #F5DFA0;
+}
+[data-theme='dark'] .product-card-content {
+  background-color: #241309;
+}
+[data-theme='dark'] .product-title {
+  color: #F5E6C8 !important;
+}
+[data-theme='dark'] .product-description {
+  color: #C4A882 !important;
+}
+[data-theme='dark'] .product-placeholder {
+  color: #C4A882 !important;
+}
+[data-theme='dark'] .product-order-button {
+  background: #7A3D10 !important;
+  color: #F5DFA0 !important;
+}
+[data-theme='dark'] .product-tab:not(.product-tab-active) {
+  border-color: rgba(245,223,160,0.2) !important;
+  color: #F5DFA0 !important;
+}
+
+/* Product image gradient areas → deep brown */
+[data-theme='dark'] .bg-gradient-to-br {
+  background-image: none !important;
+  background-color: #2A1709 !important;
+}
+
+/* Text colors: dark browns → warm creams */
+[data-theme='dark'] [style*='color: #3B1A08'],
+[data-theme='dark'] [style*='color:#3B1A08'] {
+  color: #F5E6C8 !important;
+}
+[data-theme='dark'] [style*='color: #8B6B55'],
+[data-theme='dark'] [style*='color:#8B6B55'],
+[data-theme='dark'] [style*='color: #6B4F3A'],
+[data-theme='dark'] [style*='color:#6B4F3A'],
+[data-theme='dark'] [style*='color: #7A5C40'],
+[data-theme='dark'] [style*='color:#7A5C40'],
+[data-theme='dark'] [style*='color: #5C3D1A'],
+[data-theme='dark'] [style*='color:#5C3D1A'] {
+  color: #C4A882 !important;
+}
+[data-theme='dark'] [style*='color: #A08060'],
+[data-theme='dark'] [style*='color:#A08060'] {
+  color: #9A7E5F !important;
+}
+/* Inline white backgrounds (contact form etc.) → dark card tone */
+[data-theme='dark'] [style*='background: white'],
+[data-theme='dark'] [style*='background:white'],
+[data-theme='dark'] [style*='background: #fff'],
+[data-theme='dark'] [style*='background:#fff'],
+[data-theme='dark'] [style*='background: #FFFFFF'],
+[data-theme='dark'] [style*='background:#FFFFFF'] {
+  background: #241309 !important;
+}
+/* Form fields: readable text + dark-friendly caret */
+[data-theme='dark'] input,
+[data-theme='dark'] textarea,
+[data-theme='dark'] select {
+  color: #F5E6C8 !important;
+  caret-color: #E8841A;
+}
+[data-theme='dark'] input::placeholder,
+[data-theme='dark'] textarea::placeholder {
+  color: #9A7E5F !important;
+}
+/* Smooth theme transition instead of a jarring snap */
+footer,
+section,
+.bg-white,
+.product-card-hover,
+nav {
+  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+}
+
+/* Link hovers (JS inline hover colors lose to !important, so redo in CSS) */
+[data-theme='dark'] a:hover {
+  color: #E8841A !important;
+}
+
+/* Scrollbar in dark mode */
+[data-theme='dark'] ::-webkit-scrollbar-track { background: #140A03; }

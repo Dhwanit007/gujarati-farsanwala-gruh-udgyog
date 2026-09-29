@@ -1,10 +1,11 @@
 import Image from 'next/image'
+import { FiFeather, FiHome, FiMapPin, FiPackage, FiStar } from 'react-icons/fi'
 
 const highlights = [
-  { icon: '🌿', title: '100% Natural', sub: 'No artificial colours or preservatives' },
-  { icon: '👩‍🍳', title: 'Gruh Udgyog', sub: 'Home-made with traditional recipes' },
-  { icon: '📦', title: 'Bulk & Wholesale', sub: 'Events, shops & resellers welcome' },
-  { icon: '📍', title: 'Ahmedabad Based', sub: 'Proudly made in Gujarat' },
+  { Icon: FiFeather, title: '100% Natural', sub: 'No artificial colours ' },/**or preservatives */
+  { Icon: FiHome, title: 'Gruh Udhyog', sub: 'Home-made with traditional recipes' },
+  { Icon: FiPackage, title: 'Bulk & Wholesale', sub: 'Events, shops & resellers welcome' },
+  { Icon: FiMapPin, title: 'Ahmedabad Based', sub: 'Proudly made in Gujarat' },
 ]
 
 export default function About() {
@@ -35,7 +36,7 @@ export default function About() {
                 className="absolute bottom-5 right-5 px-4 py-1.5 rounded-full text-sm font-bold text-white"
                 style={{ background: '#E8841A' }}
               >
-                Est. 2011 🎉
+                Est. 2011 <FiStar className="inline ml-1" aria-hidden="true" />
               </span>
             </div>
           </div>
@@ -43,26 +44,28 @@ export default function About() {
           {/* Text */}
           <div>
             <p className="leading-relaxed mb-4 text-sm sm:text-base" style={{ color: '#6B4F3A' }}>
-              Gujarati Farsanwala Gruh Udgyog was founded in <strong>2011</strong> with a simple mission — to bring authentic,
+              Gujarati Farsanwala Gruh Udhyog was founded in <strong>2011</strong> with a simple mission — to bring authentic,
               wholesome Gujarati snacks to every home. Based in <strong>Ahmedabad</strong>, we are a wholesale trader and
               home-kitchen brand trusted by thousands of families across Gujarat and beyond.
             </p>
             <p className="leading-relaxed mb-4 text-sm sm:text-base" style={{ color: '#6B4F3A' }}>
               We craft <strong>Namkeen</strong> (Rings, Mamri, Chat Puri, Bhelpuri…), crispy <strong>Khakhras</strong>,
               tangy <strong>Pickles</strong> (Kerda, Gunda, Chhundo…), and farali specials like <strong>Sabudana Chevdo</strong> —
-              all without artificial preservatives, using traditional recipes passed down through generations.
+              all
+              {/* without artificial preservatives, */}
+              using traditional recipes passed down through generations.
             </p>
             <p className="leading-relaxed mb-6 text-sm sm:text-base" style={{ color: '#6B4F3A' }}>
-              🏪 Our products are now available at <strong>Reliance stores across Gujarat</strong>, in addition to direct home delivery across India!
+              <FiHome className="inline mr-1" aria-hidden="true" /> Our products are now available at <strong>SMART BAZAAR STORES across Gujarat</strong>, in addition to direct home delivery across India!
             </p>
 
             <div className="grid grid-cols-2 gap-4">
-              {highlights.map(h => (
-                <div key={h.title} className="flex items-start gap-3">
-                  <span className="text-2xl mt-0.5">{h.icon}</span>
+              {highlights.map(({ Icon, title, sub }) => (
+                <div key={title} className="flex items-start gap-3">
+                  <Icon className="text-2xl mt-0.5 flex-shrink-0" aria-hidden="true" />
                   <div>
-                    <strong className="block text-sm font-bold" style={{ color: '#3B1A08' }}>{h.title}</strong>
-                    <span className="text-xs" style={{ color: '#8B6B55' }}>{h.sub}</span>
+                    <strong className="block text-sm font-bold" style={{ color: '#3B1A08' }}>{title}</strong>
+                    <span className="text-xs" style={{ color: '#8B6B55' }}>{sub}</span>
                   </div>
                 </div>
               ))}

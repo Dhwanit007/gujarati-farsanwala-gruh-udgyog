@@ -1,10 +1,12 @@
+import { FiAward, FiHome, FiPackage } from 'react-icons/fi'
+
 const features = [
-  { icon: '🌿', title: 'No Preservatives', desc: 'Every product made fresh without artificial preservatives, colours or flavours. Natural goodness in every bite.' },
-  { icon: '👩‍🍳', title: 'Home Kitchen Quality', desc: 'Prepared with the same love as food made at home — traditional, tried and trusted recipes.' },
-  { icon: '🏆', title: 'Since 2011', desc: 'Over 13 years of serving authentic Gujarati farsan to thousands of happy customers across India.' },
-  { icon: '🏪', title: 'At Reliance Stores', desc: 'Gujarat residents can now pick up our products from their nearest Reliance Smart / Fresh store!' },
-  { icon: '🚚', title: 'Pan-India Shipping', desc: 'We ship across India so you can enjoy the taste of Gujarat no matter where you live.' },
-  { icon: '🤝', title: 'Custom & Bulk Orders', desc: 'Gift hampers, wedding favour packs, event catering and wholesale orders — all welcome.' },
+  // { icon: '🌿', title: 'No Preservatives', desc: 'Every product made fresh without artificial preservatives, colours or flavours. Natural goodness in every bite.' },
+  { Icon: FiHome, title: 'Home Kitchen Quality', desc: 'Prepared with the same love as food made at home — traditional, tried and trusted recipes.' },
+  { Icon: FiAward, title: 'Since 2011', desc: 'Over 15 years of serving authentic Gujarati farsan to thousands of happy customers across India.' },
+  { Icon: FiPackage, title: 'At SMART BAZAAR Stores', desc: 'Gujarat residents can now pick up our products from their nearest SMART BAZAAR stores!' },
+  // { icon: '🚚', title: 'Pan-India Shipping', desc: 'We ship across India so you can enjoy the taste of Gujarat no matter where you live.' },
+  // { icon: '🤝', title: 'Custom & Bulk Orders', desc: 'Gift hampers, wedding favour packs, event catering and wholesale orders — all welcome.' },
 ]
 
 export default function WhyUs() {
@@ -32,9 +34,9 @@ export default function WhyUs() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {features.map(f => (
+          {features.map(({ Icon, title, desc }) => (
             <div
-              key={f.title}
+              key={title}
               className="rounded-2xl p-6 text-center border transition-all duration-300 group cursor-default"
               style={{
                 background: 'rgba(255,255,255,0.05)',
@@ -51,11 +53,11 @@ export default function WhyUs() {
                 e.currentTarget.style.transform = 'translateY(0)'
               }}
             >
-              <span className="text-4xl block mb-3">{f.icon}</span>
+              <Icon className="text-4xl block mb-3 mx-auto" style={{ color: '#F5DFA0' }} aria-hidden="true" />
               <h3 className="font-bold text-base mb-2" style={{ fontFamily: "'Playfair Display', serif", color: '#F5DFA0' }}>
-                {f.title}
+                {title}
               </h3>
-              <p className="text-sm leading-relaxed" style={{ color: '#A08060' }}>{f.desc}</p>
+              <p className="text-sm leading-relaxed" style={{ color: '#A08060' }}>{desc}</p>
             </div>
           ))}
         </div>

@@ -1,4 +1,6 @@
 import Head from 'next/head'
+import fs from 'fs'
+import path from 'path'
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
 import MarqueeStrip from '../components/MarqueeStrip'
@@ -10,11 +12,11 @@ import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 import ReliancePopup from '../components/ReliancePopup'
 
-export default function Home() {
+export default function Home({ productImages }) {
   return (
     <>
       <Head>
-        <title>Gujarati Farsanwala Gruh Udgyog – Taste of Tradition Since 2011</title>
+        <title>Gujarati Farsanwala Gruh Udhyog – Taste of Tradition Since 2011</title>
       </Head>
 
       {/* Reliance Gujarat popup — shows after 1.8s */}
@@ -27,11 +29,28 @@ export default function Home() {
       <Hero />
       <MarqueeStrip />
       <About />
-      <Products />
+      <Products productImages={productImages} />
       <WhyUs />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Contact />
       <Footer />
     </>
   )
+}
+
+export async function getStaticProps() {
+  const IMAGE_EXTS = ['.jpg', '.jpeg', '.png', '.webp']
+  const dir = path.join(process.cwd(), 'public', 'products')
+
+  let productImages = []
+  try {
+    productImages = fs
+      .readdirSync(dir)
+      .filter(f => IMAGE_EXTS.includes(path.extname(f).toLowerCase()))
+      .map(f => f.toLowerCase())
+  } catch {
+    // folder missing or unreadable — cards fall back to emoji placeholders
+  }
+
+  return { props: { productImages } }
 }

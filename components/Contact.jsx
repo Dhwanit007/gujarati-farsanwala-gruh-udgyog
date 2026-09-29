@@ -1,5 +1,6 @@
 'use client'
 import { MapPin, Phone, Mail, Clock, Instagram, Store } from 'lucide-react'
+import { FiHome, FiLogIn, FiMapPin, FiMessageCircle, FiPackage, FiShoppingCart } from 'react-icons/fi'
 import { usePopup } from '../context/PopupContext'
 
 export default function Contact() {
@@ -18,8 +19,8 @@ export default function Contact() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
-          {/* Reliance Walk-in card */}
-          <div className="rounded-2xl overflow-hidden shadow-lg" style={{ border: '1px solid rgba(232,132,26,0.2)' }}>
+          {/* SMART BAZAAR Walk-in card */}
+          <div className="rounded-2xl overflow-hidden shadow-lg flex flex-col" style={{ border: '1px solid rgba(232,132,26,0.2)' }}>
             <div
               className="px-6 pt-8 pb-6 text-center relative overflow-hidden"
               style={{ background: 'linear-gradient(135deg,#3B1A08,#7A3D10)' }}
@@ -36,23 +37,23 @@ export default function Contact() {
                 className="inline-block px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-3"
                 style={{ background: 'rgba(232,132,26,0.3)', color: '#F5DFA0', border: '1px solid rgba(232,132,26,0.4)' }}
               >
-                📍 In Gujarat? Walk In!
+                <FiMapPin className="inline mr-1" aria-hidden="true" /> In Gujarat? Walk In!
               </div>
               <h3 className="text-2xl font-black mb-1" style={{ fontFamily: "'Playfair Display', serif", color: '#FDF6E3' }}>
                 Available at
               </h3>
               <h3 className="text-3xl font-black" style={{ fontFamily: "'Playfair Display', serif", color: '#E8841A' }}>
-                Reliance Stores
+                SMART BAZAAR Stores
               </h3>
             </div>
 
-            <div className="bg-white px-6 py-6">
+            <div className="bg-white px-6 py-6 flex-1">
               <div className="flex flex-col gap-3 mb-6">
                 {[
-                  { n: '1', icon: '📍', text: 'Find your nearest Reliance Smart or Reliance Fresh in Gujarat' },
-                  { n: '2', icon: '🚶', text: 'Simply walk in — no app, no account, no waiting' },
-                  { n: '3', icon: '🛒', text: 'Find Gujarati Farsanwala products in the namkeen & snacks aisle' },
-                ].map(({ n, icon, text }) => (
+                  { n: '1', Icon: FiMapPin, text: 'Find your nearest SMART BAZAAR store in Gujarat' },
+                  { n: '2', Icon: FiLogIn, text: 'Simply walk in — no app, no account, no waiting' },
+                  { n: '3', Icon: FiShoppingCart, text: 'Find Gujarati Farsanwala products in the namkeen & snacks aisle' },
+                ].map(({ n, Icon, text }) => (
                   <div
                     key={n}
                     className="flex items-start gap-3 rounded-xl p-3"
@@ -65,7 +66,7 @@ export default function Contact() {
                       {n}
                     </div>
                     <p className="text-sm leading-snug pt-0.5" style={{ color: '#5C3D1A' }}>
-                      <span className="mr-1">{icon}</span>{text}
+                      <Icon className="inline mr-1" aria-hidden="true" />{text}
                     </p>
                   </div>
                 ))}
@@ -78,8 +79,11 @@ export default function Contact() {
                 onMouseEnter={e => e.currentTarget.style.opacity = '0.9'}
                 onMouseLeave={e => e.currentTarget.style.opacity = '1'}
               >
-                How to Find Us 🏪
+                <FiHome className="inline mr-1" aria-hidden="true" /> How to Find Us
               </button>
+              <div className="contact-ecommerce-notice mt-3 text-center text-xs font-bold tracking-wide" style={{ color: '#A08060' }}>
+                Coming Soon to Quick E-Commerce
+              </div>
             </div>
           </div>
 
@@ -93,7 +97,7 @@ export default function Contact() {
                 { Icon: MapPin, label: 'Location',        value: 'Ahmedabad, Gujarat, India' },
                 { Icon: Phone,  label: 'Call / WhatsApp', value: '+91 98795 04950' },
                 { Icon: Mail,   label: 'Email',           value: 'gujaratifarsanwala2011@gmail.com' },
-                { Icon: Clock,  label: 'Business Hours',  value: 'Mon–Sat: 9 AM – 7 PM\nSunday: 10 AM – 3 PM' },
+                { Icon: Clock,  label: 'Business Hours',  value: 'Mon–Sat: 9 AM – 7 PM' },
               ].map(({ Icon, label, value }) => (
                 <div key={label} className="flex gap-4 mb-4 items-start">
                   <div
@@ -126,7 +130,7 @@ export default function Contact() {
               style={{ background: 'linear-gradient(135deg,rgba(232,132,26,0.08),rgba(201,162,39,0.06))', border: '1px solid rgba(232,132,26,0.2)' }}
             >
               <h4 className="font-bold text-base mb-2" style={{ fontFamily: "'Playfair Display', serif", color: '#3B1A08' }}>
-                📦 Bulk & Wholesale Enquiries
+                <FiPackage className="inline mr-1" aria-hidden="true" /> Bulk & Wholesale Enquiries
               </h4>
               <p className="text-sm leading-relaxed mb-4" style={{ color: '#6B4F3A' }}>
                 For large orders, wedding favours, event catering or wholesale pricing — reach out directly on WhatsApp or give us a call.
@@ -138,7 +142,7 @@ export default function Contact() {
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-white"
                 style={{ background: '#4A7C59' }}
               >
-                💬 WhatsApp Us for Bulk Orders
+                <FiMessageCircle className="inline mr-1" aria-hidden="true" /> WhatsApp Us for Bulk Orders
               </a>
             </div>
           </div>

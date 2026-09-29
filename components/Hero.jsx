@@ -1,5 +1,6 @@
 'use client'
 import Image from 'next/image'
+import { FiAward } from 'react-icons/fi'
 import { usePopup } from '../context/PopupContext'
 
 export default function Hero() {
@@ -31,7 +32,7 @@ export default function Hero() {
             className="inline-block px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-6"
             style={{ background: 'rgba(232,132,26,0.2)', border: '1px solid rgba(232,132,26,0.5)', color: '#E8841A' }}
           >
-            🏆 Ahmedabad's Favourite Since 2011
+            <FiAward className="inline mr-1" aria-hidden="true" /> Ahmedabad's Favourite Since 2011
           </span>
 
           <h1
@@ -56,8 +57,10 @@ export default function Hero() {
 
           <p className="leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0 text-sm sm:text-base" style={{ color: '#C4A882' }}>
             Handcrafted namkeen, crispy khakhras, crunchy rings, mini bhakharwadi, and tangy pickles made
-            with love using age-old Gujarati family recipes. No preservatives. No shortcuts. Just pure
-            Gujarati goodness — now also available at Reliance stores across Gujarat!
+            with love using age-old Gujarati family recipes.
+            {/*No preservatives. */}
+            No shortcuts. Just pure
+            Gujarati goodness — now also available at SMART BAZAAR stores across Gujarat!
           </p>
 
           <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
@@ -83,13 +86,13 @@ export default function Hero() {
 
           {/* Stats */}
           <div
-            className="grid grid-cols-3 gap-4 mt-10 pt-8"
+            className="grid grid-cols-2 gap-4 mt-10 pt-8"
             style={{ borderTop: '1px solid rgba(201,162,39,0.2)' }}
           >
             {[
-              { num: '13+', label: 'Years of Trust' },
+              { num: '15+', label: 'Years of Trust' },
               { num: '19+', label: 'Products' },
-              { num: '10K+', label: 'Happy Customers' },
+              // { num: '10K+', label: 'Happy Customers' },
             ].map(s => (
               <div key={s.label} className="text-center">
                 <div className="text-2xl sm:text-3xl font-black" style={{ fontFamily: "'Playfair Display', serif", color: '#E8841A' }}>{s.num}</div>
@@ -122,7 +125,7 @@ export default function Hero() {
               style={{ background: 'radial-gradient(circle, rgba(232,132,26,0.2) 0%, transparent 70%)', transform: 'scale(1.5)' }}
             />
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden border-4 border-yellow-600 shadow-2xl">
-              <Image src="/logo.png" alt="Gujarati Farsanwala Gruh Udgyog" fill className="object-cover" priority />
+              <Image src="/logo.png" alt="Gujarati Farsanwala Gruh Udhyog" fill className="object-cover" priority />
             </div>
           </div>
         </div>
