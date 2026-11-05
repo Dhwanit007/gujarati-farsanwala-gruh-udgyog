@@ -14,6 +14,7 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lato:wght@300;400;700&display=swap"
           rel="stylesheet"
         />
+        <meta name="google-site-verification" content="xVfLmQ9iJtFZw5mL6R1wiPgvJHU2MIWnWTOEhy-BFfc" />
       </Head>
       <body>
         <Main />
