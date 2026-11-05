@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Allow search engines and AI crawlers to discover and reference this website.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://gujarati-farsanwala-gruh-udhyog.vercel.app/sitemap.xml
