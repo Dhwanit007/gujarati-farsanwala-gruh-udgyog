@@ -61,6 +61,7 @@ export default function ReliancePopup() {
             {/* Close button */}
             <button
               onClick={handleClose}
+              aria-label="Close store information"
               className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
             >
               <X size={16} className="text-white" />

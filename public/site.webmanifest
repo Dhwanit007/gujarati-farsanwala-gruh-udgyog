@@ -1,0 +1,17 @@
+{
+  "name": "Gujarati Farsanwala Gruh Udhyog",
+  "short_name": "Gujarati Farsanwala",
+  "description": "Authentic Gujarati Namkeen, Khakhra, Pickles and Farali Snacks since 2011.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFBF2",
+  "theme_color": "#3B1A08",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -119,6 +119,7 @@ export default function Navbar() {
               className="p-2 rounded-lg transition-colors"
               style={{ color: '#F5DFA0' }}
               onClick={() => setOpen(!open)}
+              aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
             >
             {open ? <X size={22} /> : <Menu size={22} />}
             </button>
